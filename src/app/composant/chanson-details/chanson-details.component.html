@@ -1,0 +1,18 @@
+<div *ngIf="chanson;else other_content">
+  <div class="card lg:card-side bg-base-300 shadow-xl m-7">
+    <div class="card-body">
+      <p>Chanson</p>
+      <h2 class="card-title text-2xl font-bold">{{ chanson.titre }}</h2>
+      <p class="font-bold">{{ chanson.artiste }} - {{ chanson.album }} - {{ chanson.datePublication | date : "d MMMM y"
+        }} - Déjà écoutée
+        <span>{{ chanson.nombreLectures | convertirUnites }} </span> fois!
+      </p>
+      <h3>
+        Paroles
+      </h3>
+      <p>{{ chanson.paroles }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #other_content></ng-template>

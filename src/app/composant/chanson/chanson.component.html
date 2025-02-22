@@ -1,0 +1,9 @@
+<div (click)="onClick(chanson)" class="card lg:card-side bg-base-300 shadow-xl m-7">
+  <div class="card-body">
+    <p class="font-bold">{{ chanson.titre }} - {{ chanson.artiste }} - {{ chanson.album }} - {{ chanson.datePublication
+      | date : "d MMMM y"
+      }} - {{ chanson.duree | convertirDuree }} - Déjà écoutée
+      <span matTooltip="{{chanson.nombreLectures | i18nPlural: messageTooltip}}" [ngClass]="{ 'text-red-500': chanson.nombreLectures > 5000 }">{{ chanson.nombreLectures | convertirUnites }} </span> fois!
+    </p>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div *ngIf="liste;else liste_vide" class="container">
+  <div class="card lg:card-side bg-base-300 shadow-xl m-7">
+    <figure>
+      <img src="{{ liste.image }}" alt="image de {{ liste.titre }}" />
+    </figure>
+    <div class="card-body">
+      <p>{{ liste.type }}</p>
+      <h2 class="card-title">{{ liste.titre }} @if (liste.sousTitre) { - {{ liste.sousTitre }}}
+          @else if (liste.verifie == true) {
+            <span>✔️</span>
+          }
+      </h2>
+      <p>{{ liste.description }}</p>
+      <p class="font-bold">
+        Publié le : {{ liste.datePublication | date : "d MMMM y" }} | Déjà
+        <span matTooltip="clickhere" [ngClass]="{ 'text-red-500': liste.nombreSauvegarde > 5000 }"
+          >{{ liste.nombreSauvegarde | convertirUnites }} </span
+        >sauvegardes !
+      </p>
+    </div>
+  </div>
+  <div class="overflow-x-auto">
+    <div *ngFor="let chanson of liste.chansons; let i = index">
+      <app-chanson [chanson]="chanson" (onChansonClick)="onChansonClick($event)"/>
+    </div>
+  </div>
+  <app-chanson-details [chanson]="chansonActive" />
+</div>
+
+<ng-template #liste_vide>Choisissez une liste</ng-template>

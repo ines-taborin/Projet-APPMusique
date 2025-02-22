@@ -1,0 +1,62 @@
+<form [formGroup]="form">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Titre</mat-label>
+      <input matInput formControlName="titre" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Sous-titre</mat-label>
+      <input matInput formControlName="sousTitre" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Image</mat-label>
+      <input matInput formControlName="image" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-checkbox formControlName="verifie">Vérifié</mat-checkbox>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Date de publication</mat-label>
+      <input matInput formControlName="datePublication" type="date" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Visibilité</mat-label>
+      <select matNativeControl formControlName="visibilite">
+        <option value="Public">Public</option>
+        <option value="Privé">Privé</option>
+        <option value="Protégé">Protégé</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Ajouter</button>
+  </div>
+</form>

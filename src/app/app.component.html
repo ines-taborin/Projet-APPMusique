@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-toolbar class="toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span></span> -->
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item [routerLink]="['/home']">Accueil</a>
+        <a mat-list-item [routerLink]="['/about']">À Propos</a>
+        <a mat-list-item [routerLink]="['/administration']">Administration</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

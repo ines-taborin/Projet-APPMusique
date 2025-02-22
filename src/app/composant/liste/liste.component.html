@@ -1,0 +1,15 @@
+<div (click)="onClick(liste)" *ngFor="let liste of listes; index as i; first as isFirst"
+  class="flex flex-row  items-center bg-primary text-primary-content">
+  <img [src]="liste.image" alt="Image de {{ liste.titre }}" class="w-[20%] m-2 rounded-full" />
+  <div class="main">
+    <div class="line">
+      <strong class="text-l text-bold ">{{ liste.titre }} </strong>
+    </div>
+    <div>
+      {{ liste.type }}
+      @if (liste.sousTitre) { -
+      {{ liste.sousTitre }}
+      }
+    </div>
+  </div>
+</div>

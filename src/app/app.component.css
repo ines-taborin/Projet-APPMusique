@@ -1,0 +1,32 @@
+.nav-list {
+  margin-top: 10vh;
+}
+
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.sidenav {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.content {
+  margin-top: 64px;
+  overflow: hidden;
+  height: 95vh;
+}
+
+button {
+  margin: 5px;
+}

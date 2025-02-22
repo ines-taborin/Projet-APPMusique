@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <div class="controls">
+      <div class="flex row justify-evenly">
+        <img class="w-[30%] p-2" src="logo.svg" alt="logo" />
+        <div class="w-[70%] pt-4">
+          <mat-form-field>
+            <input matInput type="search" [(ngModel)]="text" (ngModelChange)="changementTexte($event)" placeholder="Rechercher" />
+            <button matSuffix mat-icon-button aria-label="Rechercher">
+              <mat-icon class="m-2">search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="flex row justify-evenly m-3">
+        <mat-chip-set aria-label="Fish selection">
+          <mat-chip (click)="onArtisteClick()" [ngClass]="{'active': pipeActive === filtrerArtiste }">Artiste</mat-chip>
+          <mat-chip (click)="onAvecParolesClick()" [ngClass]="{'active': pipeActive === filtrerAvecParoles }">Chansons avec paroles</mat-chip>
+          <mat-chip (click)="onNombreEcoutesClick()" [ngClass]="{'active': pipeActive === filtrerEcoutes }">Nombre de lectures</mat-chip>
+          <mat-chip (click)="onChansonPopulaireClick()" [ngClass]="{'active': pipeActive === filtrerChansonsPopulaires }">chansons populaires</mat-chip>
+        </mat-chip-set>
+      </div>
+    </div>
+    <div class="listes">
+      <app-liste [listes]="listes" [(listeActive)]="listeActive" (listeActiveChange)="OnChange()"></app-liste>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="background-color p-5">
+    <app-liste-details [liste]="listeActive"></app-liste-details>
+  </mat-sidenav-content>
+</mat-sidenav-container>

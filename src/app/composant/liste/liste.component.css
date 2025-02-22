@@ -1,0 +1,16 @@
+mat-chip {
+  background-color: #4e5c50 ! important;
+}
+
+mat-form-field {
+  background-color: #4e5c50;
+}
+
+.line {
+display: flex;
+justify-content: space-between;
+}
+
+.delete {
+cursor: pointer;
+}

@@ -1,0 +1,68 @@
+<button (click)="onCreerClick()">Ajouter liste</button>
+
+<div class="table-wrapper">
+  <div class="table-container">
+    <table mat-table [dataSource]="listes" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="titre">
+        <th mat-header-cell *matHeaderCellDef>Titre</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.titre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="sousTitre">
+        <th mat-header-cell *matHeaderCellDef>SousTitre</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.sousTitre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.type }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="verifie">
+        <th mat-header-cell *matHeaderCellDef>Verifie</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.verifie }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="datePublication">
+        <th mat-header-cell *matHeaderCellDef>Date Publication</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.datePublication }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="visibilite">
+        <th mat-header-cell *matHeaderCellDef>Visibilite</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.ivisibilited }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombreSauvegarde">
+        <th mat-header-cell *matHeaderCellDef>Nombre Sauvegarde</th>
+        <td mat-cell *matCellDef="let liste">{{ liste.nombreSauvegarde }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let liste">
+          <button mat-icon-button color="primary" (click)="onModifier(liste)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="onSupprimer(liste)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="colonnesAffichees"></tr>
+      <tr mat-row *matRowDef="let row; columns: colonnesAffichees;"></tr>
+    </table>
+  </div>
+</div>

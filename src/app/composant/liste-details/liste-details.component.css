@@ -1,0 +1,11 @@
+.text-red-500 {
+    color: red;
+  }
+
+  img {
+    width: 50%;
+  }
+
+  .container{
+    overflow: auto;
+  }
